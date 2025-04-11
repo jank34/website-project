@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> <!-- Add Google Font -->
+    <style>
+        /* About Me Section Styling */
+        #about-me {
+            margin-top: 40px;
+            padding: 20px;
+            background: #ffffff; /* White background for a clean look */
+            color: #2c3e50; /* Dark blue-gray for text */
+            text-align: center;
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        #about-me h2 {
+            font-size: 2rem;
+            color: #e74c3c; /* Vibrant red for the heading */
+            margin-bottom: 10px;
+        }
+
+        #about-me p {
+            font-size: 1rem;
+            color: #7f8c8d; /* Muted gray for the paragraph text */
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <section id="video">
+        <video autoplay muted loop id="background-video">
+            <source src="assets/A very intense video..mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+            <h1>Welcome to Jan Jan's</h1>
+            <!-- Removed the "Discover our services" paragraph -->
+        </div>
+        <div class="top-right-links">
+            <a href="#engineering">Engineering</a> | <a href="#videography">Videography</a>
+        </div>
+    </section>
+    <header>
+        <h1>Select a service for YOU!</h1>
+    </header>
+    <main>
+        <section id="engineering">
+            <a href="engineering.html" style="text-decoration: none; color: inherit;">
+                <h2>Engineering</h2>    
+                <p>Explore our engineering projects and expertise.</p>
+            </a>
+        </section>
+        <section id="videography">
+            <a href="videography.html" style="text-decoration: none; color: inherit;">
+                <h2>Videography</h2>
+                <p>Discover our videography portfolio and services.</p>
+            </a>
+        </section>
+        <section id="contact">
+            <a href="contact.html" style="text-decoration: none; color: inherit;">
+                <h2>Contact Us</h2>
+                <p>Contact information or a form can go here.</p>
+            </a>
+        </section>
+        <section id="popup-section">
+            <h2>Special Announcement</h2>
+            <p>Check out our latest updates and offers!</p>
+        </section>
+    </main>
+    <script>
+        // Scroll to the top of the page on load
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
+</body>
+</html>
