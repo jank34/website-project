@@ -51,7 +51,7 @@ main {
     padding: 20px;
     text-align: center; /* Center-align all section content */
     position: relative;
-    z-index: 2; /* Ensure the main content appears above the video */
+    z-index: 1; /* Keep the main content below the top-right links */
     margin-top: 0; /* Adjust spacing if needed */
 }
 
@@ -64,6 +64,8 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center; /* Center-align section content */
+    position: relative; /* Ensure sections do not have a higher stacking context */
+    z-index: 1; /* Explicitly set a lower z-index for all sections */
 }
 
 section:hover {
@@ -77,6 +79,28 @@ section h2 {
 
 section p {
     color: #7f8c8d; /* Muted gray for section text */
+}
+
+/* General Section Styling */
+section {
+    position: relative; /* Ensure sections are positioned relative to the document flow */
+    z-index: 1; /* Explicitly set a lower z-index for all sections */
+}
+
+/* Specific Section Adjustments */
+#video,
+#engineering,
+#videography,
+#contact,
+#popup-section {
+    position: relative; /* Ensure these sections are positioned relative */
+    z-index: 1; /* Ensure these sections stay below the top-right links */
+}
+
+#engineering,
+#videography,
+#contact {
+    z-index: 1; /* Ensure these sections stay below the top-right links */
 }
 
 /* Add keyframes for the pop-in effect */
@@ -212,36 +236,41 @@ footer {
 
 /* Top-right links styling */
 .top-right-links {
-    position: absolute;
+    position: fixed; /* Fix the links to the top-right corner of the viewport */
     top: 10px;
     right: 20px;
     font-size: 1rem;
     font-family: Arial, sans-serif;
     color: #ffffff; /* White text for contrast */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow for readability */
-    z-index: 1000; /* Ensure it stays above the video */
+    z-index: 10000; /* Ensure it stays above all other elements */
+    pointer-events: auto; /* Ensure the links remain clickable */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for better visibility */
+    padding: 5px 10px; /* Optional: Add padding for better spacing */
+    border-radius: 5px; /* Optional: Add rounded corners */
 }
 
 .top-right-links a {
-    color: #ffffff; /* Keep the font color white */
+    color: #ffd700; /* Bright yellow for visibility */
     text-decoration: none;
     margin: 0 5px;
     font-weight: bold;
 }
 
 .top-right-links a:hover {
-    color: #ffd700; /* Bright yellow on hover for better interactivity */
+    color: #e74c3c; /* Highlight color on hover */
 }
 
 /* Popup Section Styling */
 #popup-section {
     margin-top: 40px; /* Add spacing above the section */
-    padding: 20px;
+    padding: 40px; /* Increase padding for a larger section */
     background: rgba(44, 62, 80, 0.9); /* Semi-transparent dark background */
     color: #ffffff; /* White text for contrast */
     text-align: center;
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 1.2rem; /* Increase font size for better readability */
 }
 
 /* Slide Up Animation */
@@ -271,8 +300,17 @@ footer {
     margin-bottom: 10px;
 }
 
-#about-me p {
-    font-size: 1rem;
-    color: #7f8c8d; /* Muted gray for the paragraph text */
-    line-height: 1.6;
+/* Circular Image Styling */
+.circular-image {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    margin-top: 20px; /* Add spacing above the image */
+}
+
+.circular-image img {
+    width: 300px; /* Double the width */
+    height: 300px; /* Double the height */
+    border-radius: 50%; /* Make the image circular */
+    border: 5px solid #ffd700; /* Match the "Welcome to Jan Jan's" yellow font color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
 }
