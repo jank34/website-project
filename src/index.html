@@ -28,9 +28,22 @@
             color: #7f8c8d; /* Muted gray for the paragraph text */
             line-height: 1.6;
         }
+
+        .top-right-links {
+            position: fixed; /* Ensures the links stay in the top-right corner */
+            top: 10px; /* Adjust the vertical position */
+            right: 10px; /* Adjust the horizontal position */
+            z-index: 1000; /* Higher value to overlay other elements */
+            background: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent background */
+            padding: 5px 10px; /* Optional: Add some padding for better appearance */
+            border-radius: 5px; /* Optional: Rounded corners */
+        }
     </style>
 </head>
 <body>
+    <div class="top-right-links">
+        <a href="#engineering">Engineering</a> | <a href="#videography">Videography</a>
+    </div>
     <section id="video">
         <video autoplay muted loop id="background-video">
             <source src="assets/A very intense video..mp4" type="video/mp4">
@@ -39,9 +52,6 @@
         <div class="video-overlay">
             <h1>Welcome to Jan Jan's</h1>
             <!-- Removed the "Discover our services" paragraph -->
-        </div>
-        <div class="top-right-links">
-            <a href="#engineering">Engineering</a> | <a href="#videography">Videography</a>
         </div>
     </section>
     <header>

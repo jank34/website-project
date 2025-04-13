@@ -1,3 +1,10 @@
+/* General reset for all elements */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -15,6 +22,8 @@ header {
     color: #ecf0f1; /* Light gray for text contrast */
     padding: 1rem 0;
     text-align: center; /* Center-align header text */
+    position: relative;
+    z-index: 2; /* Lower than .top-right-links */
 }
 
 header h1 {
@@ -53,6 +62,11 @@ main {
     position: relative;
     z-index: 1; /* Keep the main content below the top-right links */
     margin-top: 0; /* Adjust spacing if needed */
+}
+
+main section {
+    position: relative;
+    z-index: 2; /* Lower than .top-right-links */
 }
 
 /* Section Styles */
@@ -174,6 +188,23 @@ section {
     z-index: 1; /* Ensure it doesn't overlap other sections */
 }
 
+#video {
+    position: relative;
+    z-index: 1; /* Lower than .top-right-links */
+    height: 66.67vh; /* 2/3 of the viewport height */
+    overflow: hidden;
+}
+
+#background-video {
+    z-index: 0; /* Background video stays behind everything */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section */
+}
+
 /* Background video styling */
 #background-video {
     position: absolute;
@@ -183,23 +214,6 @@ section {
     height: 100%;
     object-fit: cover; /* Ensures the video covers the entire section */
     z-index: -1; /* Places the video behind all other elements */
-}
-
-/* Video Section Styles */
-#video {
-    position: relative;
-    height: 66.67vh; /* 2/3 of the viewport height */
-    overflow: hidden;
-}
-
-#background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire section */
-    z-index: -1; /* Places the video behind the text */
 }
 
 .video-overlay {
@@ -232,22 +246,20 @@ footer {
     background: #2c3e50; /* Same dark blue-gray as the header */
     color: #ecf0f1; /* Light gray for text */
     font-size: 0.9rem;
+    position: relative;
+    z-index: 2; /* Lower than .top-right-links */
 }
 
 /* Top-right links styling */
 .top-right-links {
-    position: fixed; /* Fix the links to the top-right corner of the viewport */
-    top: 10px;
-    right: 20px;
-    font-size: 1rem;
-    font-family: Arial, sans-serif;
-    color: #ffffff; /* White text for contrast */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow for readability */
-    z-index: 10000; /* Ensure it stays above all other elements */
+    position: fixed; /* Ensures the links stay in the top-right corner */
+    top: 10px; /* Adjust the vertical position */
+    right: 10px; /* Adjust the horizontal position */
+    z-index: 9999; /* Very high value to ensure it overlays all other elements */
+    background: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent background */
+    padding: 5px 10px; /* Optional: Add some padding for better appearance */
+    border-radius: 5px; /* Optional: Rounded corners */
     pointer-events: auto; /* Ensure the links remain clickable */
-    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for better visibility */
-    padding: 5px 10px; /* Optional: Add padding for better spacing */
-    border-radius: 5px; /* Optional: Add rounded corners */
 }
 
 .top-right-links a {
@@ -271,6 +283,8 @@ footer {
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     font-size: 1.2rem; /* Increase font size for better readability */
+    position: relative;
+    z-index: 2; /* Lower than .top-right-links */
 }
 
 /* Slide Up Animation */
